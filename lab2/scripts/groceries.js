@@ -5,8 +5,6 @@ var products = [
 	{
 	  name: "Broccoli",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: false,
 	  price: 1.99,
@@ -14,8 +12,6 @@ var products = [
 	{
 	  name: "Bread",
 	  vegetarian: true,
-	  vegan: false,
-	  lactoseFree: true,
 	  glutenFree: false,
 	  organic: false,
 	  price: 2.35,
@@ -23,8 +19,6 @@ var products = [
 	{
 	  name: "Salmon",
 	  vegetarian: false,
-	  vegan: false,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: false,
 	  price: 10.0,
@@ -32,8 +26,6 @@ var products = [
 	{
 	  name: "Almond Milk",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 3.5,
@@ -41,8 +33,6 @@ var products = [
 	{
 	  name: "Chicken Breast",
 	  vegetarian: false,
-	  vegan: false,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 7.25,
@@ -50,8 +40,6 @@ var products = [
 	{
 	  name: "Cheddar Cheese",
 	  vegetarian: true,
-	  vegan: false,
-	  lactoseFree: false,
 	  glutenFree: true,
 	  organic: false,
 	  price: 4.5,
@@ -59,8 +47,6 @@ var products = [
 	{
 	  name: "Quinoa",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 5.0,
@@ -68,8 +54,6 @@ var products = [
 	{
 	  name: "Greek Yogurt",
 	  vegetarian: true,
-	  vegan: false,
-	  lactoseFree: false,
 	  glutenFree: true,
 	  organic: false,
 	  price: 3.99,
@@ -77,8 +61,6 @@ var products = [
 	{
 	  name: "Tofu",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 2.5,
@@ -86,8 +68,6 @@ var products = [
 	{
 	  name: "Honey",
 	  vegetarian: true,
-	  vegan: false,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 6.0,
@@ -95,8 +75,6 @@ var products = [
 	{
 	  name: "Spinach",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 2.99,
@@ -104,8 +82,6 @@ var products = [
 	{
 	  name: "Olive Oil",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: true,
 	  price: 8.5,
@@ -113,8 +89,6 @@ var products = [
 	{
 	  name: "Brown Rice",
 	  vegetarian: true,
-	  vegan: true,
-	  lactoseFree: true,
 	  glutenFree: true,
 	  organic: false,
 	  price: 3.75,
@@ -122,8 +96,6 @@ var products = [
 	{
 	  name: "Dark Chocolate",
 	  vegetarian: true,
-	  vegan: true,
-
 	  glutenFree: true,
 	  organic: false,
 	  price: 3.15,
@@ -133,53 +105,22 @@ var products = [
   // given restrictions provided, make a reduced list of products
   // prices should be included in this list, as well as a sort based on price
   
-  function restrictListProducts(prods, restriction) {
-	let prodList = [];
-  
-	
-	for (let i=0; i<prods.length; i++) {
+	function restrictListProducts(prods, restriction) {
+		let prodList = [];
 
-		if(restriction.includes('vegetarian') && restriction.includes('glutenFree') && restriction.includes('organic')){
-            if(prods[i].vegetarian && prods[i].glutenFree && prods[i].organic){
-                prodList.push(prods[i]);
-            }
-        }
-
-        else if(restriction.includes('vegetarian') && restriction.includes('glutenFree')){
-            if(prods[i].vegetarian && prods[i].glutenFree){
-                prodList.push(prods[i]);
-            }
-        }
-
-        else if(restriction.includes('vegetarian') && restriction.includes('organic')){
-            if(prods[i].vegetarian && prods[i].organic){
-                prodList.push(prods[i]);
-            }
-        }
-
-        else if(restriction.includes('glutenFree') && restriction.includes('organic')){
-            if(prods[i].glutenFree && prods[i].organic){
-                prodList.push(prods[i]);
-            }
-        }
-        else if(prods[i].vegetarian && restriction.includes('vegetarian')) {
-            prodList.push(prods[i]);
-        } 
-
-		else if(prods[i].glutenFree && restriction.includes('glutenFree')) {
-            prodList.push(prods[i]);
-        } 
+		var isVegeterian = restriction.includes('vegetarian');
+		var isGlutenFree = restriction.includes('glutenFree');
+		var isOrganic = restriction.includes('organic');
 		
-		else if(prods[i].isOrganic && restriction.includes('organic')) {
-            prodList.push(prods[i]);
-        } 
+		
+		for (let i=0; i<prods.length; i++) {
 
-		else if(restriction.includes('none')) {
-            prodList.push(prods[i]);
-        }
+			if(prods[i].vegetarian == isVegeterian && prods[i].glutenFree == isGlutenFree && prods[i].organic == isOrganic){
+				prodList.push(prods[i]);
+			}
+		}
+		return prodList.sort((a, b) => a.price - b.price);
 	}
-	return prodList.sort((a, b) => a.price - b.price);
-}
   
   // Calculate the total price of items, with received parameter being a list of products
   function getTotalPrice(chosenProducts) {
