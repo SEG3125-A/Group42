@@ -64,6 +64,11 @@ function populateListProductChoices(slct2) {
 		label.htmlFor = optionArray[i].name;
 		label.appendChild(document.createTextNode(optionArray[i].name));
 		s2.appendChild(label);
+
+		// Display ingredients
+		var ingredients = document.createElement('span');
+		ingredients.innerHTML = " (Ingredients: " + optionArray[i].ingredients.join(", ") + ")";
+		s2.appendChild(ingredients);
 		
 		// create a breakline node and add in HTML DOM
 		s2.appendChild(document.createElement("br"));    
