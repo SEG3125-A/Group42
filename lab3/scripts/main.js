@@ -8,6 +8,9 @@ function initializeProductCategoryDropdown() {
     document.getElementById("productCategory").addEventListener("change", filterProductsByCategoryAndRestrictions);
 }
 
+
+
+
 // Initializes the tab content by hiding all and showing the first tab
 function initializeTabs() {
     let tabContent = document.getElementsByClassName("tabcontent");
