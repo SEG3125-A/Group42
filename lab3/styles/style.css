@@ -101,3 +101,178 @@ input[type="checkbox"]:checked {
   height: 50px; /* Adjust as needed */
   margin-right: 10px;
 }
+
+/* New Color Scheme and Fonts */
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #f1f1f1;
+  --accent-color: #ccc;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Header Styles */
+.header h1 {
+  background-color: var(--primary-color); 
+  color: white; 
+  font-family: var(--font-family); 
+  font-size: 36px; 
+  text-align: center; 
+  padding: 20px; 
+  margin-top: 0; 
+  margin-bottom: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Styling Checkboxes */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--secondary-color);
+  border: 2px solid var(--primary-color);
+  padding: 9px;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+/* Styling Dropdown */
+select {
+  padding: 8px 12px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+
+/* Styling Sliders */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: var(--accent-color);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Style Buttons */
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+/* Tab Navigation Styles */
+.tab {
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: 2px solid var(--primary-color);
+  outline: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.tab button:hover {
+  background-color: var(--accent-color);
+}
+
+.tab button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Hover Effects for Buttons */
+.btn:hover {
+  background-color: #367c39; /* Darker shade of primary color */
+  transform: scale(1.05); /* Slightly enlarge button */
+}
+
+/* Animations for Tab Changes */
+.tabcontent {
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Grid for Product Display */
+.displayProduct {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+/* Flexible Images */
+.product-image {
+  max-width: 200px; /* Adjust maximum width as needed */
+  max-height: 200px; /* Adjust maximum height as needed */
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Ensures the image aspect ratio is maintained */
+  margin-right: 10px; /* Adjust margin for spacing */
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 24px;
+    padding: 15px;
+  }
+
+  .tab button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+  /* Responsive styles go here */
+}
