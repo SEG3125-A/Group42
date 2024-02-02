@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Stylesheet Reference -->
+  <!-- This style sheet is taken from https://www.w3schools.com/howto/howto_js_tabs.asp -->
+  <link href="styles/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Group 42's Bio Shop</h1>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <span class="breadcrumb" id="breadcrumb-client">Client</span>
+    <span class="breadcrumb-separator">></span>
+    <span class="breadcrumb" id="breadcrumb-products">Products</span>
+    <span class="breadcrumb-separator">></span>
+    <span class="breadcrumb" id="breadcrumb-cart">Cart</span>
+  </div>
+
+  <!-- Tab Navigation Links -->
+  <div class="tab">
+    <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+    <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+    <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+  </div>
+
+  <!-- Client Tab Content -->
+  <div id="Client" class="tabcontent">
+    <h3>Client Information</h3>
+    <p>Tell us a bit about you.</p>
+    Choose a Category:
+    <form name="restrictions">
+      <input type="checkbox" name="restriction" value="vegetarian" />
+      <label>Vegetarian</label>
+      <input type="checkbox" name="restriction" value="glutenFree" />
+      <label>Gluten-free</label>
+      <input type="checkbox" name="restriction" value="organic" />
+      <label>Organic</label>
+    </form>
+    <button id="addCart" type="button" class="btn" onclick="populateListProductChoices('displayProduct')">
+      Update Cart
+    </button>
+  </div>
+
+  <!-- Products Tab Content -->
+  <div id="Products" class="tabcontent">
+    <h3>Your Targeted Products</h3>
+    <p>We preselected products based on your restrictions.</p>
+
+    <!-- Dropdown for Product Categories -->
+    <select id="productCategory">
+    <option value="all">All Categories</option>
+    <option value="vegetables">Vegetables</option>
+    <option value="fruits">Fruits</option>
+    <option value="dairy">Dairy</option>
+    <option value="meats">Meats</option>
+    <!-- Added other categories -->
+    <option value="bakery">Bakery</option>
+    <option value="beverages">Beverages</option>
+    <option value="grains">Grains</option>
+    <option value="condiments">Condiments</option>
+    <option value="sweets">Sweets</option>
+    <option value="meat-alternatives">Meat Alternatives</option>
+    </select>
+
+    Choose items to buy:
+    <div id="displayProduct"></div>
+    <button id="addCart" type="button" class="block" onclick="selectedItems()">
+      Add items to Cart
+    </button>
+  </div>
+
+
+  <!-- Cart Tab Content -->
+  <div id="Cart" class="tabcontent">
+    <h3>Cart</h3>
+    <p>Here is your cart.</p>
+    <div id="displayCart"></div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Site created by Emre Bengu, Emirali Gungor and Arman Dogru</p>
+  </footer>
+
+  <!-- JavaScript Files -->
+  <script src="scripts/groceries.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
