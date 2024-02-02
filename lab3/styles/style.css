@@ -97,8 +97,8 @@ input[type="checkbox"]:checked {
 }
 
 .product-image {
-  width: 50px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
+  width: 50px; 
+  height: 50px; 
   margin-right: 10px;
 }
 
@@ -248,8 +248,8 @@ input[type="range"]::-moz-range-thumb {
 
 /* Flexible Images */
 .product-image {
-  max-width: 200px; /* Adjust maximum width as needed */
-  max-height: 200px; /* Adjust maximum height as needed */
+  max-width: 200px;
+  max-height: 200px;
   width: auto;
   height: auto;
   object-fit: contain; /* Ensures the image aspect ratio is maintained */
@@ -268,11 +268,4 @@ input[type="range"]::-moz-range-thumb {
     padding: 8px 10px;
     font-size: 14px;
   }
-}
-
-
-
-/* Responsive Design for Mobile Devices */
-@media screen and (max-width: 768px) {
-  /* Responsive styles go here */
 }
