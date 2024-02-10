@@ -38,6 +38,7 @@ header h1:hover {
 }
 
 #services img {
+
     border-radius: 10px;
     margin-bottom: 15px;
     width: 100%; /* Ensuring uniform image size */
@@ -46,6 +47,7 @@ header h1:hover {
 }
 
 #services img:hover {
+
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -53,7 +55,7 @@ header h1:hover {
 #services h3 {
     font-weight: bold;
     margin-top: 10px;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 #services h3:hover {
     color: var(--accent-color);
