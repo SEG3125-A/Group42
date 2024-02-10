@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Salon Service</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="text-center py-3">
+        <h1>Hair Salon Services</h1>
+    </header>
+
+
+    <!-- Services Section -->
+    <section id="services" class="p-3">
+        <div class="container">
+            <h2 class="text-center">Our Services</h2>
+            <div class="row">
+            <!-- Service 1 -->
+            <div class="col-md-4 text-center">
+                <img src="images/hair-cut.webp" alt="Haircut" class="img-fluid" data-toggle="tooltip" title="Classic Haircut - $30">
+                <h3>Classic Haircut</h3>
+                <p>$30</p>
+            </div>
+            <!-- Service 2 -->
+            <div class="col-md-4 text-center">
+                <img src="images/hair-coloring.webp" alt="Coloring" class="img-fluid" data-toggle="tooltip" title="Hair Coloring - $50">
+                <h3>Hair Coloring</h3>
+                <p>$50</p>
+            </div>
+            <!-- Service 3 -->
+            <div class="col-md-4 text-center">
+                <img src="images/hair-styling.webp" alt="Styling" class="img-fluid" data-toggle="tooltip" title="Hair Styling - $40">
+                <h3>Hair Styling</h3>
+                <p>$40</p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Booking Section -->
+    <section id="booking" class="p-3 bg-secondary text-white">
+        <div class="container">
+            <h2 class="text-center">Book an Appointment</h2>
+            <form id="booking-form">
+                <!-- Service Selection -->
+                <div class="form-group">
+                    <label for="serviceSelect">Select Service:</label>
+                    <select class="form-control" id="serviceSelect">
+                        <option>Classic Haircut</option>
+                        <option>Hair Coloring</option>
+                        <option>Hair Styling</option>
+                    </select>
+                </div>
+                <!-- Date and Time Selection -->
+                <div class="form-group">
+                    <label for="datetime">Date and Time:</label>
+                    <input type="datetime-local" class="form-control" id="datetime">
+                </div>
+                <!-- Name Input -->
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <!-- Phone Number Input -->
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+                    <small class="form-text text-muted">Enter a 10-digit phone number.</small>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Book Appointment</button>
+            </form>
+            <!-- Add loading spinner (hidden by default) -->
+            <div id="loading-spinner" style="display: none;">
+                <img src="https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif" alt="Loading..." />
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Information Section -->
+    <section id="information" class="p-3">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
+            <p>We are a team of experienced hair stylists dedicated to providing top-notch hair care and styling services. Visit us at our cozy salon in the heart of the city.</p>
+            <p><strong>Address:</strong> 123 Salon Street, Hairstyle City</p>
+            <p><strong>Opening Hours:</strong> Monday - Friday, 9:00 AM to 7:00 PM</p>
+        </div>
+    </section>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip(); // Initialize tooltips
+        });
+    
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission
+    
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var phonePattern = /^[0-9]{10}$/; // Regular expression for 10-digit phone number
+    
+            // Validation
+            if (!name.trim()) {
+                alert('Please enter your name.');
+                return;
+            }
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return;
+            }
+    
+            // Show loading spinner
+            document.getElementById('loading-spinner').style.display = 'block';
+            setTimeout(function() {
+                // Hide spinner and show success message
+                document.getElementById('loading-spinner').style.display = 'none';
+                alert('Appointment booked successfully!');
+            }, 2000); // Simulate a 2-second loading process
+        });
+    </script>
+    
+
+</body>
+</html>
