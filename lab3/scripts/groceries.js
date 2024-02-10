@@ -150,6 +150,7 @@ function filterProductsByCategoryAndRestrictions() {
     let restrictionsForm = document.forms['restrictions'];
     let selectedRestrictions = Array.from(restrictionsForm.elements['restriction'])
                                     .filter(input => input.checked)
+                                    
                                     .map(input => input.value);
 
     let productListContainer = document.getElementById('displayProduct');
