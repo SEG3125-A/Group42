@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hair Salon Service</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery UI -->
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="text-center py-3">
+      <h1>Hair Salon Services</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Hair Salon</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#services"
+              >Services <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#booking">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#information">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section id="services" class="p-3">
+      <div class="container">
+        <h2 class="text-center">Our Services</h2>
+        <div class="row">
+          <!-- Service 1 -->
+          <div class="col-md-4 text-center">
+            <img
+              src="images/hair-cut.webp"
+              alt="Haircut"
+              class="img-fluid"
+              data-toggle="tooltip"
+              title="Classic Haircut - $30"
+            />
+            <h3>Classic Haircut</h3>
+            <p>$35</p>
+          </div>
+          <!-- Service 2 -->
+          <div class="col-md-4 text-center">
+            <img
+              src="images/hair-coloring.webp"
+              alt="Coloring"
+              class="img-fluid"
+              data-toggle="tooltip"
+              title="Hair Coloring - $50"
+            />
+            <h3>Hair Coloring</h3>
+            <p>$55</p>
+          </div>
+          <!-- Service 3 -->
+          <div class="col-md-4 text-center">
+            <img
+              src="images/hair-styling.webp"
+              alt="Styling"
+              class="img-fluid"
+              data-toggle="tooltip"
+              title="Hair Styling - $40"
+            />
+            <h3>Hair Styling</h3>
+            <p>$45</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section with Professional Selection and Payment Information -->
+    <section id="booking" class="p-3 bg-secondary text-white">
+      <div class="container">
+        <h2 class="text-center">Book an Appointment</h2>
+        <form id="booking-form">
+          <!-- Service and Professional Selection -->
+          <div class="form-group">
+            <label for="serviceSelect">Select Service:</label>
+            <select class="form-control" id="serviceSelect">
+              <option>Classic Haircut</option>
+              <option>Hair Coloring</option>
+              <option>Hair Styling</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="professionalSelect">Select Professional:</label>
+            <select class="form-control" id="professionalSelect">
+              <option>Emirali</option>
+              <option>Arman</option>
+              <option>Emre</option>
+            </select>
+          </div>
+          <!-- Payment Information -->
+          <div class="form-group">
+            <label for="cardNumber">Credit Card Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cardNumber"
+              placeholder="Enter credit card number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="cardExpiry">Expiration Date:</label>
+            <input type="month" class="form-control" id="cardExpiry" required />
+          </div>
+          <div class="form-group">
+            <label for="cardCVC">CVC:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cardCVC"
+              placeholder="CVC"
+              required
+            />
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary">
+            Book Appointment
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="information" class="p-3">
+      <div class="container">
+        <h2 class="text-center">About Us</h2>
+        <p>
+          We are a team of experienced hair stylists dedicated to providing
+          top-notch hair care and styling services. Visit us at our cozy salon
+          in the heart of the city.
+        </p>
+        <p><strong>Address:</strong> 123 Salon Street, Hairstyle City</p>
+        <p>
+          <strong>Opening Hours:</strong> Monday - Friday, 9:00 AM to 7:00 PM
+        </p>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+
+      $("#booking-form").submit(function (e) {
+        e.preventDefault();
+        var name = $("#name").val();
+        if (!name) {
+          alert("Please enter your name.");
+          return false;
+        }
+
+        alert("Appointment booked successfully!");
+      });
+    </script>
+  </body>
+</html>
