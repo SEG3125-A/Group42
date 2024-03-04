@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head content like title, CSS links -->
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Results</h1>
+        <% responses.forEach(function(response) { %>
+            <div class="response">
+                <!-- Display each response. Example: -->
+                <p>Overall Experience: <%= response.userExperience %></p>
+                <!-- Repeat for other response fields -->
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
