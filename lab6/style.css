@@ -1,0 +1,213 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #141414; /* Netflix's background color */
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #ffffff; /* Content background is white */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #E50914; /* Netflix red for primary headings */
+}
+
+.website-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.question label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: bold;
+    color: #333; /* Keeping labels dark for readability */
+}
+
+.question input[type="text"],
+.question select,
+.question textarea {
+    width: 100%;
+    padding: .625rem;
+    border: 1px solid #000; /* Changed to black */
+    background: white; /* Black background for input fields */
+    color: black; /* White text */
+    border-radius: 5px;
+}
+
+
+.question input[type="radio"],
+.question input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.question input[type="submit"] {
+    display: block;
+    width: 100%;
+    background: linear-gradient(to bottom, #E50914 0%, #B81D24 100%); /* Gradient effect for the submit button */
+    color: white;
+    border: 1px solid #000; /* Add a black border */
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+fieldset {
+    border: 1px solid #000; /* Add black border around fieldsets */
+}
+
+.question input[type="submit"]:hover {
+    background-color: #B81D24; /* Darker shade of red for hover effect */
+}
+
+.signature {
+    text-align: center;
+    margin-top: 40px;
+    font-style: italic;
+    font-size: 0.9em;
+    color: #888888; /* Light grey for the signature */
+}
+
+/* Improved accessibility for form elements */
+.question input[type="text"],
+.question select,
+.question textarea,
+.question input[type="radio"],
+.question input[type="checkbox"] {
+    /* Adding focus styles for better keyboard navigation */
+    outline: none; /* Removes default focus outline */
+    box-shadow: 0 0 3px #aaa; /* Adds a subtle focus outline */
+}
+
+/* This is for when an element has been clicked AND is focused */
+.question input[type="text"]:focus,
+.question select:focus,
+.question textarea:focus {
+    border: 1px solid #5cb85c;
+}
+
+/* Improved responsiveness and spacing for radio buttons and checkboxes */
+.question-group {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    /* Set max-width to prevent overflow */
+    max-width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #fff;
+}
+
+.title {
+    color: black; /* Netflix red for primary headings */
+    font-weight: bold;
+}
+
+.question-group legend {
+    font-weight: bold;
+    padding: 0 5px; /* Padding to ensure background does not cut off */
+    background: white; /* Background to knock out line through text */
+    position: relative;
+}
+
+/* Reduce excessive whitespace above radio buttons and checkboxes */
+.question-group {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    /* Reduce top margin to decrease white space */
+    margin-top: 0;
+    border-radius: 5px;
+}
+
+/* Ensure that labels are visible by providing a contrasting color */
+.question label,
+.question-group legend {
+    /* Set text color to dark for visibility */
+    color: black;
+}
+
+/* Adjust the width of dropdowns and text areas to prevent overflow */
+.question select,
+.question textarea {
+    /* Set max-width to prevent overflow */
+    max-width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Ensure that the submit button does not exceed the width of its container */
+.question input[type="submit"] {
+    /* Set max-width to prevent overflow */
+    max-width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Adjust the margin and padding around the question to reduce white space */
+.question-group {
+    /* Adjust padding to reduce space */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Fix for missing survey question title - assuming it is a label element */
+.question label {
+    /* Set a background color that contrasts with the text color */
+    background-color: #fff; /* Assuming the label has a white background */
+    padding: 0.25rem; /* Add some padding to make it visually pleasing */
+    border-radius: 5px; /* Optional: adds rounded corners to the label */
+}
+
+/* Fix for the text input field overlapping the title */
+.question input[type="text"] {
+    /* Ensure the input field does not overlap with the label */
+    position: relative; /* Use relative positioning */
+    z-index: 1; /* Higher z-index so it comes above any other element that might overlap */
+}
+
+/* Ensure the text area does not overflow the container */
+.question textarea {
+    /* Adjust width to prevent overflow */
+    width: calc(100% - 1.25rem); /* Subtract the total padding from the width */
+    margin: 0 auto; /* Center the textarea if there is space on the sides */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .website-image {
+        width: 80%;
+    }
+    
+    .question input[type="submit"] {
+        padding: 10px 15px; /* Slightly smaller padding on smaller screens */
+    }
+}
+
+/* Additional responsive handling for smaller devices */
+@media (max-width: 480px) {
+    .question-group {
+        display: block; /* Stack the form elements on smaller screens */
+    }
+}

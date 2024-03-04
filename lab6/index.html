@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming Service UI Survey</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Netflix Survey</h1>
+    <p><a href="https://www.netflix.com/">Powered by Netflix</a></p>
+    <a href="https://www.netflix.com/" aria-label="Streaming service user interface">
+        <img src="NetflixUI.png" alt="Screenshot of the Streaming Service UI" class="website-image">
+    </a>
+
+    <form action="submit-survey.php" method="post">
+        <fieldset class="question">
+            <legend class="title">Survey Questions</legend>
+            
+            <label for="userExperience">How would you rate your overall experience with the streaming service?</label>
+            <input type="text" id="userExperience" name="userExperience" aria-required="true">
+
+            <label for="easeOfUse">Was the streaming service easy to navigate?</label>
+            <select id="easeOfUse" name="easeOfUse" aria-required="true">
+                <option value="">Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <fieldset class="question-group">
+                <legend>Did you find the shows/movies you were looking for?</legend>
+                <label for="foundInfoYes">
+                    <input type="radio" id="foundInfoYes" name="foundInfo" value="yes">
+                    Yes
+                </label>
+                <label for="foundInfoNo">
+                    <input type="radio" id="foundInfoNo" name="foundInfo" value="no">
+                    No
+                </label>
+            </fieldset>
+
+            <fieldset class="question-group">
+                <legend>Which features did you enjoy? (Select all that apply)</legend>
+                <label for="feature1">
+                    <input type="checkbox" id="feature1" name="feature" value="Content Selection">
+                    Content Selection
+                </label>
+                <label for="feature2">
+                    <input type="checkbox" id="feature2" name="feature" value="User Interface">
+                    User Interface
+                </label>
+                <label for="feature3">
+                    <input type="checkbox" id="feature3" name="feature" value="Streaming Quality">
+                    Streaming Quality
+                </label>
+            </fieldset>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <input type="submit" value="Submit Survey">
+        </fieldset>
+    </form>
+
+    <p class="signature">Created by Arman Doğru</p>
+</div>
+
+</body>
+</html>
