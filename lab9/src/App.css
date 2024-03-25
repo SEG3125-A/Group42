@@ -1,0 +1,116 @@
+/* Navigation styles */
+/* Adjusted for Bootstrap navbar */
+.navigation {
+  background-color: #333; /* Bootstrap navbar color customization */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation .btn {
+  background: none;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Bootstrap border-radius */
+}
+
+.navigation .btn:hover {
+  background-color: #444;
+}
+
+/* Form and input field styles within InstructionGuide */
+/* Using Bootstrap form styles */
+.instruction-guide {
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.goal-form {
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Bootstrap form-control class for input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Bootstrap button classes */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #5cb85c; /* Bootstrap button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color: #4cae4c;
+}
+
+/* Styles for content sections in ExplorationInterface */
+/* Can use Bootstrap card styles */
+.exploration-interface article {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Community feature styles */
+/* Using Bootstrap grid classes */
+.community-feature {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.community-section {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.community-section h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer styles */
+/* Bootstrap 'bg-dark' and 'text-white' classes can be used */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Responsive behavior for smaller screens */
+/* Bootstrap's grid system provides responsiveness */
+@media (max-width: 768px) {
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation .btn {
+    margin-bottom: 10px;
+  }
+
+  .exploration-interface,
+  .community-feature {
+    grid-template-columns: 1fr;
+  }
+}

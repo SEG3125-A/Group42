@@ -1,0 +1,20 @@
+{
+  "instructionGuideTitle": "Instruction Guide",
+  "firstName": "First Name",
+  "lastName": "Last Name",
+  "weight": "Weight (kg)",
+  "height": "Height (cm)",
+  "submitGoals": "Submit Goals",
+  "fitness": "Fitness",
+  "nutrition": "Nutrition",
+  "wellness": "Wellness",
+  "goalChecklist": "Goal Checklist",
+  "questionsAndAnswers": "Questions and Answers",
+  "latestPosts": "Latest Posts",
+  "healthTips": "Health Tips",
+  "successStories": "Success Stories",
+  "recommendations": "Recommendations",
+  "myProfile": "My Profile",
+  "contactUs": "Contact Us",
+  "about": "About"
+}

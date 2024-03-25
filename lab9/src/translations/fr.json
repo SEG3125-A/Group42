@@ -1,0 +1,20 @@
+{
+  "instructionGuideTitle": "Guide d'Instructions",
+  "firstName": "Prénom",
+  "lastName": "Nom de famille",
+  "weight": "Poids (kg)",
+  "height": "Taille (cm)",
+  "submitGoals": "Soumettre les Objectifs",
+  "fitness": "Fitness",
+  "nutrition": "Nutrition",
+  "wellness": "Bien-être",
+  "goalChecklist": "Liste d'Objectifs",
+  "questionsAndAnswers": "Questions et Réponses",
+  "latestPosts": "Derniers Articles",
+  "healthTips": "Conseils de Santé",
+  "successStories": "Histoires de Succès",
+  "recommendations": "Recommandations",
+  "myProfile": "Mon Profil",
+  "contactUs": "Nous Contacter",
+  "about": "À Propos"
+}
